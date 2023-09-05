@@ -64,6 +64,9 @@ require("telescope").load_extension("dap")
 -- tab scope
 require("telescope").load_extension("scope")
 
+-- harpoon
+require("telescope").load_extension('harpoon')
+
 -- key maps
 vim.keymap.set('n', '<leader>ok', ":Telescope keymaps<CR>", { desc = '[O]pen [K]ey map' })
 vim.keymap.set('n', 'ta', ":Telescope scope buffers<CR>", { desc = "[T]abs: Show [A]ll [B]uffers" })

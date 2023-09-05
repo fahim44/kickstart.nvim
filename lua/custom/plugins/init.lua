@@ -32,4 +32,11 @@ return {
 
 	-- buffers as tab
 	{ "tiagovla/scope.nvim",     config = true },
+
+	-- harpoon
+	{
+		"ThePrimeagen/harpoon",
+		dependencies = { "nvim-lua/plenary.nvim" }
+	},
+
 }
