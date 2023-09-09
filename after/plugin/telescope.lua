@@ -1,7 +1,22 @@
 -- file brower start
 -- You don't need to set any of these options.
 -- IMPORTANT!: this is only a showcase of how you can set default options!
+local actions = require "telescope.actions"
+
 require("telescope").setup {
+  defaults = {
+    -- Default configuration for telescope goes here:
+    -- config_key = value,
+    mappings = {
+      i = {
+        ["<S-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
+      },
+      n = {
+        ["<S-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
+      }
+    }
+  },
+
   extensions = {
     file_browser = {
       theme = "ivy",

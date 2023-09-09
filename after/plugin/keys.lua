@@ -3,7 +3,7 @@
 -- replace same pattern from multiple place}} 'v'}} :s/"to be replaced pattern"/"new pattern"
 -- go up}} 'i'}} <C-p>
 -- go down}} 'i'}} <C-n>
---
+-- replace string after moving value from telescope to quickFix menu (telescope keybinding}} <C-q> for all move to quickFixMenu, <S=q> for move seleted items to menu...). comand}} :cdo s/StringOne/StringTwo/g (g means global)
 
 -- debug
 local dapGo = require('dap-go')
