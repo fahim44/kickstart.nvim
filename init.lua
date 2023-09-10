@@ -124,20 +124,21 @@ require('lazy').setup({
         changedelete = { text = '~' },
       },
       on_attach = function(bufnr)
-        vim.keymap.set('n', '<leader>ph', require('gitsigns').preview_hunk, { buffer = bufnr, desc = '[P]review git [H]unk' })
+        vim.keymap.set('n', '<leader>ph', require('gitsigns').preview_hunk,
+          { buffer = bufnr, desc = '[P]review git [H]unk' })
 
         -- don't override the built-in and fugitive keymaps
         local gs = package.loaded.gitsigns
-        vim.keymap.set({'n', 'v'}, ']c', function()
+        vim.keymap.set({ 'n', 'v' }, ']c', function()
           if vim.wo.diff then return ']c' end
           vim.schedule(function() gs.next_hunk() end)
           return '<Ignore>'
-        end, {expr=true, buffer = bufnr, desc = "Jump to next hunk"})
-        vim.keymap.set({'n', 'v'}, '[c', function()
+        end, { expr = true, buffer = bufnr, desc = "Jump to next hunk" })
+        vim.keymap.set({ 'n', 'v' }, '[c', function()
           if vim.wo.diff then return '[c' end
           vim.schedule(function() gs.prev_hunk() end)
           return '<Ignore>'
-        end, {expr=true, buffer = bufnr, desc = "Jump to previous hunk"})
+        end, { expr = true, buffer = bufnr, desc = "Jump to previous hunk" })
       end,
     },
   },
@@ -508,6 +509,8 @@ local luasnip = require 'luasnip'
 require('luasnip.loaders.from_vscode').lazy_load()
 luasnip.config.setup {}
 
+local cmpTypes = require('cmp.types')
+
 cmp.setup {
   snippet = {
     expand = function(args)
@@ -546,6 +549,17 @@ cmp.setup {
   sources = {
     { name = 'nvim_lsp' },
     { name = 'luasnip' },
+  },
+  completion = {
+    autocomplete = {
+      cmpTypes.cmp.TriggerEvent.TextChanged,
+    },
+    -- completeopt = 'menu,menuone,noselect',
+    keyword_length = 1,
+    -- keyword_pattern = ".*",
+    -- get_trigger_characters = function(trigger_characters)
+    --   return trigger_characters
+    -- end,
   },
 }
 
