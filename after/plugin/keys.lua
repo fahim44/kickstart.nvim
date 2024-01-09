@@ -10,10 +10,12 @@ local dapGo = require('dap-go')
 vim.keymap.set('n', '<leader>dgt', dapGo.debug_test, { desc = '[D]ebug: [G]o [T]est' })
 
 -- yank-paste in different register
-vim.keymap.set('n', '<leader>p', '\"0p', { desc = '[P]aste without replace' })
-vim.keymap.set('v', '<leader>p', '\"0p', { desc = '[P]aste without replace' })
+vim.keymap.set('n', '<leader>P', '\"0p', { desc = '[P]aste without replace' })
+vim.keymap.set('v', '<leader>P', '\"0p', { desc = '[P]aste without replace' })
 
-vim.keymap.set('n', '<leader>oh', vim.lsp.buf.hover, { desc = '[O]pen [H]over window' })
+-- lsp commands
+vim.keymap.set('n', '<leader>li', require('telescope.builtin').lsp_incoming_calls, { desc = 'LSP: [I]ncoming calls' })
+vim.keymap.set('n', '<leader>lo', require('telescope.builtin').lsp_outgoing_calls, { desc = 'LSP: [O]utgoing calls' })
 
 -- navigate between buffers
 vim.keymap.set('n', 'ta', ":new<CR>", { desc = 'Create new empty buffer' })
