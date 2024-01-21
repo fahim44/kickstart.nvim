@@ -85,3 +85,7 @@ require("telescope").load_extension('harpoon')
 -- key maps
 vim.keymap.set('n', '<leader>ok', ":Telescope keymaps<CR>", { desc = '[O]pen [K]ey map' })
 vim.keymap.set('n', 'ta', ":Telescope scope buffers<CR>", { desc = "[T]abs: Show [A]ll [B]uffers" })
+
+-- lsp commands
+vim.keymap.set('n', '<leader>li', require('telescope.builtin').lsp_incoming_calls, { desc = 'LSP: [I]ncoming calls' })
+vim.keymap.set('n', '<leader>lo', require('telescope.builtin').lsp_outgoing_calls, { desc = 'LSP: [O]utgoing calls' })

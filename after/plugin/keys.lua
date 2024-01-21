@@ -5,17 +5,9 @@
 -- go down}} 'i'}} <C-n>
 -- replace string after moving value from telescope to quickFix menu (telescope keybinding}} <C-q> for all move to quickFixMenu, <Alt-q> for move seleted items to menu...). comand}} :cdo s/StringOne/StringTwo/g (g means global)
 
--- debug
-local dapGo = require('dap-go')
-vim.keymap.set('n', '<leader>dgt', dapGo.debug_test, { desc = '[D]ebug: [G]o [T]est' })
-
 -- yank-paste in different register
 vim.keymap.set('n', '<leader>P', '\"0p', { desc = '[P]aste without replace' })
 vim.keymap.set('v', '<leader>P', '\"0p', { desc = '[P]aste without replace' })
-
--- lsp commands
-vim.keymap.set('n', '<leader>li', require('telescope.builtin').lsp_incoming_calls, { desc = 'LSP: [I]ncoming calls' })
-vim.keymap.set('n', '<leader>lo', require('telescope.builtin').lsp_outgoing_calls, { desc = 'LSP: [O]utgoing calls' })
 
 -- navigate between buffers
 vim.keymap.set('n', 'ta', ":new<CR>", { desc = 'Create new empty buffer' })

@@ -134,3 +134,7 @@ local function go_run_test()
 end
 
 vim.keymap.set('n', '<leader>rgt', go_run_test, { desc = '[R]un: [G]o [T]est' })
+
+-- debug
+local dapGo = require('dap-go')
+vim.keymap.set('n', '<leader>dgt', dapGo.debug_test, { desc = '[D]ebug: [G]o [T]est' })
