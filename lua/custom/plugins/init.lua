@@ -22,10 +22,10 @@ return {
 	},
 
 	-- auto-close brackets
-	{
-		'm4xshen/autoclose.nvim',
-		config = true,
-	},
+	-- {
+	-- 	'm4xshen/autoclose.nvim',
+	-- 	config = true,
+	-- },
 
 	-- buffer line
 	{ 'akinsho/bufferline.nvim', version = "*", dependencies = 'nvim-tree/nvim-web-devicons', config = true },
