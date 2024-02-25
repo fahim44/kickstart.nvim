@@ -4,11 +4,11 @@
 -- See the kickstart.nvim README for more information
 return {
 
-	-- -- file browser
-	-- {
-	-- 	"nvim-telescope/telescope-file-browser.nvim",
-	-- 	dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim", "nvim-tree/nvim-web-devicons" }
-	-- },
+	-- file browser
+	{
+		"nvim-telescope/telescope-file-browser.nvim",
+		dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim", "nvim-tree/nvim-web-devicons" }
+	},
 
 	-- telescope integration with nvim-dap
 	{
